@@ -1,0 +1,9 @@
+Configurando o GIT
+git config --global user.name thigasdo96
+git config --global user.email primothiago8@gmail.com
+
+Criando um projeto MVC
+dotnet new mvc -o BlogThiago
+
+Executar
+dotnet watch run
