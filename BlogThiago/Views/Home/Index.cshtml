@@ -1,8 +1,23 @@
-﻿@{
+﻿@model Lista<Postagem>
+
+
+@{
     ViewData["Title"] = "Home ";
 }
 
 <div class="text-center">
     <h1 class="display-4">@ViewData["Mensagem"]</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Confira aqui o quadro escrito Paula.</p>
 </div>
+
+@foreach (Postagem postagem in Model)
+{
+    <p>@postagem.Nome</p>
+    <img src="@postagem.Foto" width="300" />
+    <p>@postagem.Nome</p>
+    <img src="@postagem.Foto" width="300" />
+    <p>@postagem.Nome</p>
+    <img src="@postagem.Foto" width="300" />
+    <p>@postagem.Nome</p>
+    <img src="@postagem.Foto" width="300" />
+}

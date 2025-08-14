@@ -16,13 +16,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewData["Mensagem"] = "oi mundo!";
-        Categoria categoria = new();
-        categoria.id = 1;
-        categoria.Nome = "Tecnologia";
-        Categoria categoria2 = new()
+        Categoria tecnologia = new();
+        tecnologia.Id = 1;
+        tecnologia.Nome = "Tecnologia";
+        
+        Categoria ia = new()
         {
-            id = 2,
+            Id = 2,
             Nome = "IA"
         };
 
@@ -31,13 +31,15 @@ public class HomeController : Controller
                 Id = 1,
                 Nome = "Saiu o ChatGPT 5",
                 CategoriaId = 2,
-                Categoria = categoria2,
+                Categoria = ia,
                 DataPostagem = DateTime.Parse("08/08/2025"),
                 Descricao = "dahahfajhfjksa",
-                Texto = "akdjawodkjas"
+                Texto = "akdjawodkjas",
+                Thumbnail = "/img/pula.jpg",
+                Foto = "/img/pula.jpg"
             }
         ];
-        return View();
+        return View(postagens);
     }
 
     public IActionResult Privacy()
