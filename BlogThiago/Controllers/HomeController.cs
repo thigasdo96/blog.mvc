@@ -19,11 +19,16 @@ public class HomeController : Controller
         Categoria tecnologia = new();
         tecnologia.Id = 1;
         tecnologia.Nome = "Tecnologia";
-        
+
         Categoria ia = new()
         {
             Id = 2,
             Nome = "IA"
+        };
+        Categoria naruto = new()
+        {
+            Id = 3,
+            Nome = "NARUTO"
         };
 
         List<Postagem> postagens = [
@@ -35,13 +40,27 @@ public class HomeController : Controller
                 DataPostagem = DateTime.Parse("08/08/2025"),
                 Descricao = "dahahfajhfjksa",
                 Texto = "akdjawodkjas",
-                Thumbnail = "/img/pula.jpg",
-                Foto = "/img/pula.jpg"
+                Thumbnail = "/img/paula.jpg",
+                Foto = "/img/paula.jpg"
+            },
+            new() {
+                Id = 2,
+                Nome = "Naruto é muito bom",
+                CategoriaId = 3,
+                Categoria = naruto,
+                DataPostagem = DateTime.Parse("08/08/2025"),
+                Descricao = "dahahfajhfjksa",
+                Texto = "akdjawodkjas",
+                Thumbnail = "/img/paula.jpg",
+                Foto = "/img/paula.jpg"
             }
         ];
         return View(postagens);
     }
-
+    public IActionResult Postagem(int id)
+    {
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();
